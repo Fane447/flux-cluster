@@ -1,0 +1,18 @@
+#jinja2: trim_blocks: True, lstrip_blocks: True
+{% for item in csi_driver_smb.storage_class %}
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: {{ item.name }}
+provisioner: smb.csi.k8s.io
+parameters:
+  source: {{ item.source }}
+  csi.storage.k8s.io/provisioner-secret-name: {{ item.provisioner_secret_name }}
+  csi.storage.k8s.io/provisioner-secret-namespace: {{ item.provisioner_secret_namespace }}
+  csi.storage.k8s.io/node-stage-secret-name: {{ item.node_stage_secret_name }}
+  csi.storage.k8s.io/node-stage-secret-namespace: {{ item.node_stage_secret_namespace }}
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+mountOptions: ["hard", "noatime", "dir_mode=0777", "file_mode=0777", "uid=1001", "gid=1001"]
+{% endfor %}

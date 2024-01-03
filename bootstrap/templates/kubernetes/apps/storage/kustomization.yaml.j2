@@ -10,3 +10,6 @@ resources:
   {% if csi_driver_nfs.enabled | default(false) %}
   - ./csi-driver-nfs/ks.yaml
   {% endif %}
+  {% if csi_driver_smb.enabled | default(false) %}
+  - ./csi-driver-smb/ks.yaml
+  {% endif %}
