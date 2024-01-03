@@ -14,5 +14,5 @@ parameters:
   csi.storage.k8s.io/node-stage-secret-namespace: {{ item.node_stage_secret_namespace }}
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
-mountOptions: ["hard", "noatime", "dir_mode=0777", "file_mode=0777", "uid=1001", "gid=1001"]
+mountOptions: ["dir_mode=0777", "file_mode=0777", "uid=1001", "gid=1001", "noserverino", "cache=strict", "mfsymlinks", "noperm"]
 {% endfor %}
