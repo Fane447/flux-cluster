@@ -1,0 +1,15 @@
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: smb-test
+provisioner: smb.csi.k8s.io
+parameters:
+  source: //192.168.1.26/smb-test
+  csi.storage.k8s.io/provisioner-secret-name: smbcreds
+  csi.storage.k8s.io/provisioner-secret-namespace: storage
+  csi.storage.k8s.io/node-stage-secret-name: smbcreds
+  csi.storage.k8s.io/node-stage-secret-namespace: storage
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+mountOptions: ["dir_mode=0777", "file_mode=0777", "uid=1001", "gid=1001", "noserverino", "cache=strict", "mfsymlinks", "noperm"]

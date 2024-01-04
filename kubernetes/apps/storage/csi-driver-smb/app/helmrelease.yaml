@@ -2,16 +2,16 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: reloader
+  name: csi-driver-smb
 spec:
   interval: 30m
   chart:
     spec:
-      chart: reloader
-      version: 1.0.58
+      chart: csi-driver-smb
+      version: v1.13.0
       sourceRef:
         kind: HelmRepository
-        name: stakater
+        name: csi-driver-smb
         namespace: flux-system
   maxHistory: 2
   install:
@@ -24,9 +24,5 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    fullnameOverride: reloader
-    reloader:
-      readOnlyRootFileSystem: true
-      podMonitor:
-        enabled: true
-        namespace: "{% raw %}{{ .Release.Namespace }}{% endraw %}"
+    externalSnapshotter:
+      enabled: false
