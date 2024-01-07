@@ -106,10 +106,12 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClassName: local-hostpath
+        existingClaim: sabnzbd-config
+        retain: true
       tmp:
         type: emptyDir
       media:
-        storageClassName: smb-test
-        globalMounts:
-          - path: /media
+        enabled: true
+        mountPath: /media
+        existingClaim: sabnzbd-media
+        retain: true
