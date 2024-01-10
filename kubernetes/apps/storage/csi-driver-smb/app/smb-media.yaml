@@ -4,7 +4,7 @@ kind: PersistentVolume
 metadata:
   name: smb-media-nas-pv
 spec:
-  storageClassName: media-nas
+  storageClassName: smb-test
   capacity:
     storage: 1Mi
   accessModes:
@@ -39,7 +39,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteMany
-  storageClassName: media-nas
+  storageClassName: smb-test
   resources:
     requests:
       storage: 1Mi
