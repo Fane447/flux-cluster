@@ -5,3 +5,4 @@ resources:
   - ./helmrelease.yaml
   - ./storageclass.yaml
   - ./secret.sops.yaml
+  - ./smb-media.yaml

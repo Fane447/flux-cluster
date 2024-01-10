@@ -112,6 +112,5 @@ spec:
         type: emptyDir
       media:
         enabled: true
+        existingClaim: smb-media-nas-pvc
         mountPath: /media
-        existingClaim: sabnzbd-media
-        retain: true
