@@ -111,6 +111,8 @@ spec:
       tmp:
         type: emptyDir
       media:
-        enabled: true
-        existingClaim: smb-media-nas-pvc
-        mountPath: /media
+        type: nfs
+        server: 192.168.1.26
+        path: /mnt/pool-01/nfstest
+        globalMounts:
+          - path: /media
