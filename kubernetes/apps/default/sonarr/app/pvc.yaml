@@ -7,6 +7,10 @@ metadata:
 spec:
   accessModes: ["ReadWriteOnce"]
   storageClassName: local-hostpath
+  dataSourceRef:
+    kind: ReplicationDestination
+    apiGroup: volsync.backube
+    name: "sonarr-config-dst"
   resources:
     requests:
       storage: 8Gi
