@@ -4,6 +4,7 @@ kind: PersistentVolume
 metadata:
   name: smb-media-nas-pv
 spec:
+  storageClassName: smb-test
   capacity:
     storage: 1Mi
   accessModes:
@@ -20,10 +21,9 @@ spec:
     - noserverino  # required to prevent data corruption
   csi:
     driver: smb.csi.k8s.io
-    readOnly: false
     # volumeHandle format: {smb-server-address}#{sub-dir-name}#{share-name}
     # make sure this value is unique for every share in the cluster
-    volumeHandle: media-smb
+    volumeHandle: 192.168.1.26/smb-test##
     volumeAttributes:
       source: //192.168.1.26/smb-test
     nodeStageSecretRef:
