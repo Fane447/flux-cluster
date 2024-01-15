@@ -55,7 +55,7 @@ spec:
         allowVolumeExpansion: true
     volumeSnapshotClasses:
       - name: local-hostpath
-        deletionPolicy: delete
+        deletionPolicy: Delete
     driver:
       config:
         driver: local-hostpath
