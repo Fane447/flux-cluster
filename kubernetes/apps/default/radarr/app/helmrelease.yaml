@@ -55,7 +55,7 @@ spec:
               RADARR__PORT: &port 80
               RADARR__LOG_LEVEL: info
               RADARR__THEME: dark
-              TZ: America/New_York
+              TZ: Europe/London
             envFrom:
               - secretRef:
                   name: radarr-secret
@@ -101,7 +101,7 @@ spec:
         enabled: true
         className: internal
         hosts:
-          - host: &host "{{ .Release.Name }}.devbu.io"
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
