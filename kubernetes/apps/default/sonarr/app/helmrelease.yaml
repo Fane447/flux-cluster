@@ -114,7 +114,6 @@ spec:
       config:
         enabled: true
         existingClaim: sonarr-config
-        retain: true
       pushover-notify:
         type: configMap
         name: sonarr-configmap

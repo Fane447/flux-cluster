@@ -10,12 +10,14 @@ spec:
   trigger:
     schedule: "0 * * * *"
   restic:
-    copyMethod: Clone
+    copyMethod: Snapshot
     pruneIntervalDays: 7
     repository: sonarr-secret
     cacheCapacity: 8Gi
     cacheStorageClassName: local-hostpath
     cacheAccessModes: [ReadWriteOnce]
+    volumeSnapshotClassName: local-hostpath
+    storageClassName: local-hostpath
     accessModes: [ReadWriteOnce]
     moverSecurityContext:
       runAsUser: 568
@@ -36,9 +38,11 @@ spec:
     manual: restore-once
   restic:
     repository: sonarr-secret
-    copyMethod: Clone # must be Snapshot
+    copyMethod: Snapshot # must be Snapshot
     cacheCapacity: 8Gi
     cacheStorageClassName: local-hostpath
     cacheAccessModes: [ReadWriteOnce]
+    volumeSnapshotClassName: local-hostpath
+    storageClassName: local-hostpath
     accessModes: [ReadWriteOnce]
     capacity: 8Gi
