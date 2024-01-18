@@ -19,11 +19,11 @@ spec:
     volumeSnapshotClassName: local-hostpath
     storageClassName: local-hostpath
     accessModes: [ReadWriteOnce]
-    moverSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
-      runAsNonRoot: true
+    #moverSecurityContext:
+      #runAsUser: 568
+      #runAsGroup: 568
+      #fsGroup: 568
+      #runAsNonRoot: true
     retain:
       hourly: 24
       daily: 7
