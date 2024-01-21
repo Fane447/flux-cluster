@@ -28,22 +28,22 @@ spec:
       hourly: 24
       daily: 7
       weekly: 5
-# ---
-# apiVersion: volsync.backube/v1alpha1
-# kind: ReplicationDestination
-# metadata:
-#   name: "sonarr-config-dst"
-#   namespace: default
-# spec:
-#   trigger:
-#     manual: restore-once
-#   restic:
-#     repository: sonarr-secret
-#     copyMethod: Snapshot # must be Snapshot
-#     cacheCapacity: 8Gi
-#     cacheStorageClassName: local-hostpath
-#     cacheAccessModes: [ReadWriteOnce]
-#     volumeSnapshotClassName: local-hostpath
-#     storageClassName: local-hostpath
-#     accessModes: [ReadWriteOnce]
-#     capacity: 8Gi
+---
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationDestination
+metadata:
+  name: "sonarr-config-dst"
+  namespace: default
+spec:
+  trigger:
+    manual: restore-once
+  restic:
+    repository: sonarr-secret
+    copyMethod: Snapshot # must be Snapshot
+    cacheCapacity: 8Gi
+    cacheStorageClassName: local-hostpath
+    cacheAccessModes: [ReadWriteOnce]
+    volumeSnapshotClassName: local-hostpath
+    storageClassName: local-hostpath
+    accessModes: [ReadWriteOnce]
+    capacity: 8Gi
