@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./hajimari/ks.yaml
+  - ./homepage/ks.yaml
   - ./prowlarr/ks.yaml
   - ./sabnzbd/ks.yaml
   - ./sonarr/ks.yaml
