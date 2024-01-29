@@ -12,6 +12,7 @@ spec:
       app.kubernetes.io/name: *app
   dependsOn:
     - name: external-secrets-stores
+    - name: volsync
   path: ./kubernetes/apps/default/sabnzbd/app
   prune: true
   sourceRef:
@@ -25,4 +26,4 @@ spec:
     substitute:
       APP: *app
       GATUS_SUBDOMAIN: sab
-      #VOLSYNC_CAPACITY: 1Gi
+      VOLSYNC_CAPACITY: 1Gi

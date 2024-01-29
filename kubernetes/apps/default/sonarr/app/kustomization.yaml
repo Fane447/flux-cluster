@@ -7,7 +7,7 @@ resources:
   - ./helmrelease.yaml
   - ./pvc.yaml
   - ./volsyncconf.yaml
-  #- ../../../../templates/gatus/guarded
+  - ../../../../templates/gatus/guarded
 configMapGenerator:
   - name: sonarr-configmap
     files:
