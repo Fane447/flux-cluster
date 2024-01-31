@@ -127,6 +127,6 @@ spec:
       media:
         type: nfs
         server: 192.168.1.26
-        path: /mnt/pool-01/nfstest
+        path: /mnt/pool-01/nfs-media
         globalMounts:
           - path: /media
