@@ -29,8 +29,10 @@ spec:
         useStatefulSet: true
         auth:
             rootPassword:
-              name: mongodb-secret
-              key: mongo_root_password
+                valueFrom:
+                    secretKeyRef:
+                        name: mongodb-secret
+                        key: mongo_root_password
         persistence:
             enabled: true
             existingClaim: mongodb
