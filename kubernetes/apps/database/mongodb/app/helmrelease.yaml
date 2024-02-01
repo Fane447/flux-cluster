@@ -1,0 +1,46 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+    name: mongodb
+    namespace: database
+spec:
+    interval: 30m
+    chart:
+        spec:
+            chart: mongodb
+            version: 14.8.0
+            sourceRef:
+                kind: HelmRepository
+                name: bitnami
+                namespace: flux-system
+    install:
+        remediation:
+            retries: 3
+    upgrade:
+        remediation:
+            retries: 3
+    dependsOn:
+      - name: volsync
+        namespace: storage
+      - name: local-path-provisioner
+        namespace: storage
+    values:
+        fullnameOverride: mongodb
+        useStatefulSet: true
+        auth:
+            rootPassword:
+              name: mongodb-secret
+              key: mongo_root_password
+        persistence:
+            enabled: true
+            existingClaim: mongodb
+        metrics:
+            enabled: true
+            serviceMonitor:
+                enabled: true
+        podSecurityContext:
+            enabled: true
+            fsGroup: 568
+        containerSecurityContext:
+            enabled: true
+            runAsUser: 568
