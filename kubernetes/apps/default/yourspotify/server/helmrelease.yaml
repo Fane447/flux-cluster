@@ -43,7 +43,7 @@ spec:
               SPOTIFY_PUBLIC:
                 secretKeyRef:
                   name: your-spotify-secret
-                  key: YOURSPOTIFY_CLIENT-ID
+                  key: YOURSPOTIFY_CLIENT_ID
               SPOTIFY_SECRET:
                 secretKeyRef:
                   name: your-spotify-secret
@@ -51,7 +51,7 @@ spec:
               MONGO_ENDPOINT: 
                 secretKeyRef:
                   name: your-spotify-secret
-                  key: YOURSPOTIFY_MONGODB-URL
+                  key: YOURSPOTIFY_MONGODB_URL
               CORS: *client-url
             securityContext: &securityContext
               allowPrivilegeEscalation: false
