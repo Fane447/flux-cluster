@@ -12,3 +12,4 @@ resources:
   - ./overseerr/ks.yaml
   - ./tautulli/ks.yaml
   - ./recyclarr/ks.yaml
+  - ./yourspotify/ks.yaml
