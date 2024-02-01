@@ -28,11 +28,7 @@ spec:
         fullnameOverride: mongodb
         useStatefulSet: true
         auth:
-            rootPassword:
-                valueFrom:
-                    secretKeyRef:
-                        name: mongodb-secret
-                        key: mongo_root_password
+            rootPassword: "9@JXybsMziyMpRF!vvBWBmzGb.mp6P9E7psw*666QM9PrQW8f8AsbXKeGb4!dVZF"
         persistence:
             enabled: true
             existingClaim: mongodb
