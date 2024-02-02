@@ -24,7 +24,7 @@ spec:
   uninstall:
     keepHistory: false
   dependsOn:
-    - name: spotify-server
+    - name: yourspotify-server
       namespace: default
   values:
     controllers:
