@@ -27,6 +27,8 @@ spec:
     values:
         fullnameOverride: mongodb
         useStatefulSet: true
+        auth:
+            enabled: false
         persistence:
             enabled: true
             existingClaim: mongodb
