@@ -98,7 +98,7 @@ spec:
           gethomepage.dev/icon: sabnzbd.png
           gethomepage.dev/name: SABnzbd
           gethomepage.dev/widget.type: "sabnzbd"
-          gethomepage.dev/widget.url: "https://sab.fane.media"
+          gethomepage.dev/widget.url: "https://sabnzbd.default.svc.cluster.local"
           gethomepage.dev/widget.key: 
             valueFrom:
               secretKeyRef:
