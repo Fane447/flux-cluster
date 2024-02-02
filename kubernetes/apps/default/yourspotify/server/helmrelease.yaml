@@ -38,8 +38,8 @@ spec:
               tag: latest@sha256:3135223c053ed4d1ae1cb2b338462f70fb9a66a6366bd29416b47354b7b20e66
             env:
               TZ: Europe/London
-              API_ENDPOINT: https://api.spotify.${SECRET_DOMAIN}
-              CLIENT_ENDPOINT: &client-url https://spotify.${SECRET_DOMAIN}
+              API_ENDPOINT: https://api.ys.${SECRET_DOMAIN}
+              CLIENT_ENDPOINT: &client-url https://ys.${SECRET_DOMAIN}
               SPOTIFY_PUBLIC:
                 secretKeyRef:
                   name: your-spotify-secret
@@ -78,7 +78,7 @@ spec:
         enabled: true
         className: internal
         hosts:
-          - host: &host "api.spotify.${SECRET_DOMAIN}"
+          - host: &host "api.ys.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
