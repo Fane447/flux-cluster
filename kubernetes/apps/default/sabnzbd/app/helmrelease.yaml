@@ -99,6 +99,11 @@ spec:
           gethomepage.dev/name: SABnzbd
           gethomepage.dev/widget.type: "sabnzbd"
           gethomepage.dev/widget.url: "https://sab.fane.media"
+          gethomepage.dev/widget.key: 
+            valueFrom:
+              secretKeyRef:
+                name: sabnzbd-secret
+                key: SABNZBD_API_KEY
           # gethomepage.dev/pod-selector: ""
           # gethomepage.dev/weight: 10 # optional
           # gethomepage.dev/instance: "public" # optional
