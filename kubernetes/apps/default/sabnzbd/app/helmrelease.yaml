@@ -114,5 +114,12 @@ spec:
         type: nfs
         server: 192.168.1.26
         path: /mnt/pool-01/nfs-media
+        mountOptions:
+          - nfsvers=3
+          - hard
+          - noatime
+          - rw
+          - user
+          - nolock
         globalMounts:
           - path: /media
