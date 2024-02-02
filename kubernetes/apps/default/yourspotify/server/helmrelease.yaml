@@ -53,21 +53,21 @@ spec:
                   name: your-spotify-secret
                   key: YOURSPOTIFY_MONGODB_URL
               CORS: *client-url
-            securityContext: &securityContext
-              allowPrivilegeEscalation: false
-              readOnlyRootFilesystem: true
-              capabilities: { drop: ["ALL"] }
+            # securityContext: &securityContext
+            #   allowPrivilegeEscalation: false
+            #   readOnlyRootFilesystem: true
+            #   capabilities: { drop: ["ALL"] }
             resources:
               requests:
                 cpu: 10m
               limits:
                 memory: 1Gi
-        pod:
-          securityContext:
-            runAsUser: 568
-            runAsGroup: 568
-            fsGroup: 568
-            fsGroupChangePolicy: OnRootMismatch
+        # pod:
+        #   securityContext:
+        #     runAsUser: 568
+        #     runAsGroup: 568
+        #     fsGroup: 568
+        #     fsGroupChangePolicy: OnRootMismatch
     service:
       main:
         ports:
