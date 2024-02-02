@@ -38,7 +38,7 @@ spec:
               tag: latest@sha256:92e0cb5f57a782b405817fe6777b82bc825869aeaf1ece881478cc9c6d0d6707
             env:
               TZ: Europe/London
-              API_ENDPOINT: https://api.ys.${SECRET_DOMAIN}
+              API_ENDPOINT: https://apiys.${SECRET_DOMAIN}
             # securityContext: &securityContext
             #   allowPrivilegeEscalation: false
             #   readOnlyRootFilesystem: true
