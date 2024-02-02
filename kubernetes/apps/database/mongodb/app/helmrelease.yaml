@@ -27,8 +27,6 @@ spec:
     values:
         fullnameOverride: mongodb
         useStatefulSet: true
-        auth:
-            rootPassword: "9@JXybsMziyMpRF!vvBWBmzGb.mp6P9E7psw*666QM9PrQW8f8AsbXKeGb4!dVZF"
         persistence:
             enabled: true
             existingClaim: mongodb
