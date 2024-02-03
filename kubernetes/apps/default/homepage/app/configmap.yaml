@@ -44,7 +44,7 @@ data:
             href: https://192.168.1.91:8006
             icon: proxmox.png
             description: VM Management
-        - Technitium
+        - Technitium:
             href: http://192.168.1.160:5380
             icon: technitium.png
             description: DNS
