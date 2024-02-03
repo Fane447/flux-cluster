@@ -100,7 +100,7 @@ spec:
           gethomepage.dev/group: Media
           gethomepage.dev/icon: prowlarr.png
           gethomepage.dev/name: Prowlarr
-          gethomepage.dev/widget.type: "Prowlarr"
+          gethomepage.dev/widget.type: "prowlarr"
           gethomepage.dev/widget.url: "http://Prowlarr.default.svc.cluster.local"
           gethomepage.dev/widget.key: "{{HOMEPAGE_VAR_PROWLARR_TOKEN}}"
         hosts:
