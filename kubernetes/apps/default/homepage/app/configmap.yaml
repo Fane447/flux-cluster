@@ -45,7 +45,7 @@ data:
             icon: proxmox.png
             description: VM Management
         - Technitium
-            href: http://192.168.1.160:5380/
+            href: http://192.168.1.160:5380
             icon technitium.png
             description: DNS
   settings.yaml: |
