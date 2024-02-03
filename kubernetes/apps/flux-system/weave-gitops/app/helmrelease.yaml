@@ -35,7 +35,7 @@ spec:
         gethomepage.dev/enabled: "true"
         gethomepage.dev/description: Flux Monitor
         gethomepage.dev/group: Infrastructure
-        gethomepage.dev/icon: weave-gitops.png
+        gethomepage.dev/icon: "https://avatars.githubusercontent.com/u/9976052?s=48&v=4"
         gethomepage.dev/name: Weave Gitops
       hosts:
         - host: &host "gitops.${SECRET_DOMAIN}"

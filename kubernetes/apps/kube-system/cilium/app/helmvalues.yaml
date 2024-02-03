@@ -49,9 +49,9 @@ data:
           className: internal
           annotations:
             gethomepage.dev/enabled: "true"
-            gethomepage.dev/description: Network, Service & Security Observability
+            gethomepage.dev/description: "Network, Service & Security Observability"
             gethomepage.dev/group: Observability
-            gethomepage.dev/icon: hubble.png
+            gethomepage.dev/icon: "https://github.com/cilium/hubble/blob/8f7ee503162454d93da5a4b7ffd69d677daccc7b/Documentation/images/hubble_logo.png"
             gethomepage.dev/name: Hubble
           hosts:
             - "hubble.${SECRET_DOMAIN}"
