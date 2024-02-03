@@ -65,8 +65,8 @@ spec:
         className: internal
         annotations:
           gethomepage.dev/enabled: "true"
-          gethomepage.dev/name: your_spotify
-          gethomepage.dev/description: Spotify tracking dashboard
+          gethomepage.dev/name: Your Spotify
+          gethomepage.dev/description: Spotify Tracking Dashboard
           gethomepage.dev/group: Applications
           gethomepage.dev/icon: spotify.png
         hosts:
