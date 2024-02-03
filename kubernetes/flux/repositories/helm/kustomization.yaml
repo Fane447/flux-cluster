@@ -26,3 +26,4 @@ resources:
   - ./stakater.yaml
   - ./weave-gitops.yaml
   - ./zitadel.yaml
+  - ./dragonfly.yaml
