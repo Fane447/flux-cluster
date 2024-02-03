@@ -40,6 +40,14 @@ data:
               accountid: "{{HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}}"
               tunnelid: "{{HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}}"
               key: "{{HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}}"
+        - Proxmox:
+            href: https://192.168.1.91:8006
+            icon: proxmox.png
+            description: VM Management
+        - Technitium
+            href: http://192.168.1.160:5380/
+            icon technitium.png
+            description: DNS
   settings.yaml: |
     title: Dashboard
     theme: dark
