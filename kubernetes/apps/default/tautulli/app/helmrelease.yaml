@@ -101,7 +101,7 @@ spec:
           gethomepage.dev/icon: tautulli.png
           gethomepage.dev/name: Tautulli
           gethomepage.dev/widget.type: "tautulli"
-          gethomepage.dev/widget.url: "http://tautulli.default.svc.cluster.local"
+          gethomepage.dev/widget.url: "http://tautulli.default.svc.cluster.local:8181"
           gethomepage.dev/widget.key: "{{HOMEPAGE_VAR_TAUTULLI_TOKEN}}"
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
