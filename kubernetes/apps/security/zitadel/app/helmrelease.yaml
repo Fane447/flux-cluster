@@ -123,6 +123,11 @@ spec:
       className: internal
       annotations:
         external-dns.alpha.kubernetes.io/target: "ingress-cf.${SECRET_DOMAIN}"
+        gethomepage.dev/enabled: "true"
+        gethomepage.dev/description: Authentication Service
+        gethomepage.dev/group: Security
+        gethomepage.dev/icon: zitadel.png
+        gethomepage.dev/name: Zitadel
       hosts:
         - host: *host
           paths:
