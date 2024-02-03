@@ -94,4 +94,3 @@ data:
     rollOutCiliumPods: true
     securityContext:
       privileged: true
-    tunnel: false
