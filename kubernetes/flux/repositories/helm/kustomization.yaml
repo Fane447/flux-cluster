@@ -27,3 +27,4 @@ resources:
   - ./weave-gitops.yaml
   - ./zitadel.yaml
   - ./dragonfly.yaml
+  - ./authentik-charts.yaml
