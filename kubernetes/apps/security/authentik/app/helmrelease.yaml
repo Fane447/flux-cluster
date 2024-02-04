@@ -62,13 +62,13 @@ spec:
     envFrom:
       - secretRef:
           name: authentik-secret
-    autoscaling:
-      server:
-        enabled: true
-        minReplicas: 2
-      worker:
-        enabled: true
-        minReplicas: 2
+    # autoscaling:
+    #   server:
+    #     enabled: true
+    #     minReplicas: 2
+    #   worker:
+    #     enabled: true
+    #     minReplicas: 2
     prometheus:
       serviceMonitor:
         create: true
