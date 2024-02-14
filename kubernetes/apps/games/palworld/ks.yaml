@@ -9,7 +9,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/default/games/palworld/app
+  path: ./kubernetes/apps/games/palworld/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -36,7 +36,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/default/games/palworld/tools
+  path: ./kubernetes/apps/games/palworld/tools
   prune: true
   sourceRef:
     kind: GitRepository
