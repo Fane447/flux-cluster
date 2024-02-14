@@ -1,0 +1,122 @@
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2beta2.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: &app palworld
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 2.5.0
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  dependsOn:
+  - name: volsync
+    namespace: storage
+  values:
+    controllers:
+      main:
+        annotations:
+          reloader.stakater.com/auto: "true"
+        containers:
+          main:
+            image:
+              repository: ghcr.io/jammsen/docker-palworld-dedicated-server
+              tag: master@sha256:c46afb0bf51349bbf61499e6a39c32ec709d5fa015328ea214d661ff1efe012b
+            env:
+              ## Container Settings
+              TZ: ${TIMEZONE}
+              ALWAYS_UPDATE_ON_START: true
+              MULTITHREAD_ENABLED: true
+              COMMUNITY_SERVER: false
+              BACKUP_ENABLED: false #volsync is backing up the PVC
+              ## Server Gameplay Settings
+              DEATH_PENALTY: None
+              BASE_CAMP_WORKER_MAXNUM: 20
+              PAL_EGG_DEFAULT_HATCHING_TIME: "2.000000" #Default for Normal Mode
+              ## Server Settings
+              SERVER_NAME: Fane Server
+              SERVER_DESCRIPTION: Palworld!
+              PUBLIC_PORT: &port 8211
+              RCON_ENABLED: true
+              RCON_PORT: &rcon-port 25575
+              PUBLIC_IP: pal.${SECRET_DOMAIN}
+              ## Webhook Settings
+              WEBHOOK_ENABLED: true
+            envFrom:
+            - secretRef:
+                name: palworld-secret
+            probes:
+              liveness: &disabled
+                enabled: false
+              readiness: *disabled
+              startup: *disabled
+            resources:
+              requests:
+                cpu: 1000m
+              limits:
+                memory: 24Gi
+        pod:
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            fsGroup: 1000
+            fsGroupChangePolicy: OnRootMismatch
+    service:
+      main:
+        type: LoadBalancer
+        annotations:
+          io.cilium/lb-ipam-ips: "${SVC_PALWORLD_ADDR}"
+        ports:
+          http:
+            enabled: false
+          game:
+            protocol: UDP
+            port: *port
+          rcon:
+            port: *rcon-port
+    ingress:
+      main:
+        enabled: false #nginx doesn't support non-https
+        className: external
+        annotations:
+          external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
+        hosts:
+        - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          paths:
+          - path: /
+            service:
+              name: main
+              port: game
+        tls:
+        - hosts:
+          - *host
+    persistence:
+      config:
+        enabled: true
+        existingClaim: *app
+        globalMounts:
+        - path: /palworld
+      cache:
+        config:
+        enabled: true
+        existingClaim: palworld-cache
+        globalMounts:
+          - path: /palworld/Pal/Binaries
+            subPath: binaries
+          - path: /palworld/Pal/Content
+            subPath: content
+      tmp:
+        type: emptyDir
