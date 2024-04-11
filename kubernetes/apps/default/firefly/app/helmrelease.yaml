@@ -51,17 +51,17 @@ spec:
               tag: version-6.1.13
             env:
               TZ: Europe/London
-              APP_URL: "https://${HOSTNAME}"
+              APP_URL: "https://{{ .Release.Name }}.${SECRET_DOMAIN}"
               APP_ENV: "production"
               DB_CONNECTION: "pgsql"
-              DB_HOST: postgres16-rw.databases.svc.cluster.local
+              DB_HOST: postgres16-rw.database.svc.cluster.local
               DB_PORT: "5432"
               MAIL_MAILER: log
               TRUSTED_PROXIES: "**" # TODO: This should be changed..
               SEND_REGISTRATION_MAIL: false
               SEND_ERROR_MESSAGE: false
               SEND_LOGIN_NEW_IP_WARNING: false
-              COOKIE_DOMAIN: "${HOSTNAME}"
+              COOKIE_DOMAIN: "{{ .Release.Name }}.${SECRET_DOMAIN}"
               COOKIE_SECURE: "true"
               COOKIE_SAMESITE: "lax"
               AUTHENTICATION_GUARD: "remote_user_guard"
