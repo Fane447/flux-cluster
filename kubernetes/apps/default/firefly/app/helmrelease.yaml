@@ -65,7 +65,7 @@ spec:
               COOKIE_SECURE: "true"
               COOKIE_SAMESITE: "lax"
               # Requires version 6.0.21.
-              FIREFLY_III_LAYOUT: v2
+              #FIREFLY_III_LAYOUT: v2
             envFrom:
               - secretRef:
                   name: firefly-secret
