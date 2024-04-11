@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 2.5.0
+      version: 2.6.0
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -40,7 +40,7 @@ spec:
           main:
             image:
               repository: ghcr.io/onedr0p/prowlarr-develop
-              tag: 1.13.2.4251@sha256:23d16bf7bac36b6e0c6b5d0a690cb602b3911736a48f2e006f7c87ad09c8d775
+              tag: 1.14.0.4286@sha256:c77d84ebf7a64844c858f249cb3fbb59b0d2d2de21709126c339be14386a804f
             env:
               # https://github.com/Radarr/Radarr/issues/7030#issuecomment-1039689518
               # https://github.com/dotnet/runtime/issues/9336
