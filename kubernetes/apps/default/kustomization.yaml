@@ -15,4 +15,4 @@ resources:
   - ./yourspotify/ks.yaml
   - ./pgadmin/ks.yaml
   - ./monica/ks.yaml
-  - ./firefly/ks.yaml
+  #- ./firefly/ks.yaml
