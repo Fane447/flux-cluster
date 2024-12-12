@@ -35,7 +35,7 @@ spec:
           main:
             image:
               repository: yooooomi/your_spotify_client
-              tag: latest@sha256:b35261e23a7c48355c4fd8eeb2e7fce0fec3eb9efd04359fc30091aaeb7b76e4
+              tag: latest@sha256:33eda3e891cea1352a9d7178121a2e1b21ee715458252a04965ce917d97ba64b
             env:
               TZ: Europe/London
               API_ENDPOINT: https://apiys.${SECRET_DOMAIN}
