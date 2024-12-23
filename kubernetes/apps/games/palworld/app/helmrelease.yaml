@@ -34,7 +34,7 @@ spec:
           main:
             image:
               repository: ghcr.io/jammsen/docker-palworld-dedicated-server
-              tag: master@sha256:c6d6cd7f89b89e7ddf4af25be381a94088fe657634ae1674292acdfeca43df19
+              tag: master@sha256:fb6731463fe21109f16edeb754e520c3df682b62a8e8f7767535da6e61a2bcc5
             env:
               ## Container Settings
               TZ: ${TIMEZONE}
