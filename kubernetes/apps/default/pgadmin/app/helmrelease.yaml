@@ -35,7 +35,7 @@ spec:
           volume-permissions:
             image:
               repository: dpage/pgadmin4
-              tag: "8.5@sha256:00998d19a230b66e30de4bc00a2c453b07c63016dc15e58d6f6b4fa3c688d4e5"
+              tag: "9.4@sha256:6b1c0db09695758c72abcd5160b7c4cc6d0847ab0c90a2403bdbf951f0defb5a"
             command: ["/bin/chown", "-R", "5050:5050", "/var/lib/pgadmin"]
             volumeMounts:
               - name: config
@@ -46,7 +46,7 @@ spec:
           main:
             image:
               repository: dpage/pgadmin4
-              tag: "8.5@sha256:00998d19a230b66e30de4bc00a2c453b07c63016dc15e58d6f6b4fa3c688d4e5"
+              tag: "9.4@sha256:6b1c0db09695758c72abcd5160b7c4cc6d0847ab0c90a2403bdbf951f0defb5a"
             env:
               PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "False"
             envFrom:
