@@ -43,7 +43,7 @@ spec:
           main:
             image:
               repository: outdead/rcon
-              tag: latest@sha256:f4ab6d4f86525e2d71534b839cc4e2241ffc9278759f7a70ef3aa434c5aec927
+              tag: latest@sha256:c2e13830355729a986e28bb81ba18aa695542c90f5c87c62204462307200aee2
             command: ["./rcon"]
             args: [
               "-c",
